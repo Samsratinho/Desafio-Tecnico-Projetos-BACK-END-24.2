@@ -21,3 +21,37 @@ Após a aprovação do cliente, o candidato deve alocar e coordenar uma equipe d
 
 | Front-end <br>[<img loading="lazy" src="https://avatars.githubusercontent.com/u/79873886?v=4" width=115><br><sub>Filipe Campos</sub>](https://github.com/FilipeFCampos) | Front-end <br> [<img loading="lazy" src="https://avatars.githubusercontent.com/u/120533333?s=400&u=6adf1284945f8e311c55e88be6c87b467f0d9e70&v=4" width=115><br><sub>Samuel Silva</sub>](https://github.com/Samsratinho) | Front-end <br> [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184016282?v=4" width=115><br><sub>Eduarda Lourenço</sub>](https://github.com/eduardalou) | Front-end <br> [<img loading="lazy" src="https://avatars.githubusercontent.com/u/169511919?v=4" width=115><br><sub>Luiz Felipe</sub>](https://github.com/luzdrik) | Back-end <br>[<img loading="lazy" src="https://avatars.githubusercontent.com/u/98486966?v=4" width=115><br><sub>Gabriel Vitor</sub>](https://github.com/NewGabrielVi) | Back-end <br> [<img loading="lazy" src="https://avatars.githubusercontent.com/u/88168052?v=4" width=115><br><sub>Arthur costa</sub>](https://github.com/arthurcostaa/) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
+
+---
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+Para executar o projeto certifique-se que você tem uma versão recente do Python 3 instalado em sua máquina. Você pode fazer isso digitando o comando `python --version` ou `python3 --version` em seu terminal.
+
+### Instalação e Execução
+
+1. Clone o repositório e acesse o diretório do projeto
+   ```
+   git clone https://github.com/Samsratinho/Desafio-Tecnico-Projetos-BACK-END-24.2.git
+   cd Desafio-Tecnico-Projetos-BACK-END-24.2
+   ```
+2. Crie e ative o ambiente virtual (`venv`)
+   ```
+   python -m venv venv
+   source venv/bin/activate
+   ```
+3. Instale as dependências do projeto com o `pip`
+   ```
+   pip install -r requirements.txt
+   ```
+4. Execute as migrações do banco de dados
+   ```
+   python manage.py migrate
+   ```
+5. Execute o projeto
+   ```
+   python manage.py runserver
+   ```
+6. Acesse o endereço `http://127.0.0.1:8000/` no seu navegador.

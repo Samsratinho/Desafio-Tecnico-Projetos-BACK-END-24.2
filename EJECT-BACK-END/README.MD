@@ -22,5 +22,5 @@ Esse repositório tem a finalidade de realizar e documentar a parte Back-End do 
 > 5. Executar a aplicação no servidor de desenvolvimento do Django:
     `python manage.py runserver`
 
-## Diagrama de classes do projeto SABIDINHOS:
-![Diagrama de classes](./image-readme/Classe UML.png)
+## Diagrama de Classes do projeto SABIDINHOS:
+![Diagrama de Classes](image-readme/classe_uml.png)

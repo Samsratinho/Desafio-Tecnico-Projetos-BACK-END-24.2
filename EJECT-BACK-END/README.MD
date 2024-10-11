@@ -23,4 +23,4 @@ Esse repositório tem a finalidade de realizar e documentar a parte Back-End do 
     `python manage.py runserver`
 
 ## Diagrama de classes do projeto SABIDINHOS:
-![Diagrama de classes](image-readme/Classe UML.png)
+![Diagrama de classes](./image-readme/Classe UML.png)

@@ -87,7 +87,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
-.botao-laranja:hover {
+.botao-rosa:hover {
     background-color: #FFFDF2;
     transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
 }

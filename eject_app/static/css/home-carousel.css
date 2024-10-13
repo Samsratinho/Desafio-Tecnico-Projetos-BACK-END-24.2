@@ -122,14 +122,30 @@
 /*segredo hihihi*/
 
 img#product-thumb1:hover{
-  content: url('../img/fotos/leo.svg');
+  width: 201px; /* Largura exata */
+  height: 201px; /* Altura exata */
+  border-radius: 50%;
+  content: url('../img/fotos/squad_4/gabriel.webp');
 }
 img#product-thumb2:hover{
-  content: url('../img/fotos/leo.svg');
+  width: 201px; /* Largura exata */
+  height: 201px; /* Altura exata */
+  border-radius: 50%; /* Torna a imagem redonda */
+  content: url('../img/fotos/squad_4/filipe.webp');
 }
 img#product-thumb3:hover{
-  content: url('../img/fotos/leo.svg');
+  width: 201px; /* Largura exata */
+  height: 201px; /* Altura exata */
+  border-radius: 50%; /* Torna a imagem redonda */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+  overflow: hidden; /* Evita que partes da imagem saiam da borda */
+  content: url('../img/fotos/squad_4/arthur.webp');
 }
 img#product-thumb4:hover{
-  content: url('../img/fotos/leo.svg');
+  width: 201px; /* Largura exata */
+  height: 201px; /* Altura exata */
+  border-radius: 50%; /* Torna a imagem redonda */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+  overflow: hidden; /* Evita que partes da imagem saiam da borda */
+  content: url('../img/fotos/squad_4/samuel.webp');
 }

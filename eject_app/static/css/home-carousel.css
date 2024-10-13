@@ -1,3 +1,4 @@
+
 .product {
   display: flex;
   min-width: 1000px;
@@ -118,6 +119,17 @@
   margin-bottom: 10px;
 }
 
-.product-info:hover{
-color:#FFFFFF;
+/*segredo hihihi*/
+
+img#product-thumb1:hover{
+  content: url('../img/fotos/leo.svg');
+}
+img#product-thumb2:hover{
+  content: url('../img/fotos/leo.svg');
+}
+img#product-thumb3:hover{
+  content: url('../img/fotos/leo.svg');
+}
+img#product-thumb4:hover{
+  content: url('../img/fotos/leo.svg');
 }

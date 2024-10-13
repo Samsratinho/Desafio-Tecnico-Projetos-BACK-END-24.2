@@ -15,6 +15,7 @@
   display: flex;
   gap: 60px; 
   scroll-behavior: smooth;
+  z-index: 111;
 }
 
  .product-conteiner::-webkit-scrollbar{
@@ -117,3 +118,6 @@
   margin-bottom: 10px;
 }
 
+.product-info:hover{
+color:#FFFFFF;
+}

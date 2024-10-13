@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{% static '/css/home-cards.css' %}">
     <link rel="stylesheet" href="{% static '/css/footer.css '%}">
     <!--Scripts-->
-    <script src="../js/navbar.js" defer></script>
+    <script src="{%static 'js/navbar.js' %}" defer></script>
     <link rel="preconnect" href="https:/fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=DM+Serif+Display&family=DM+Sans:wght@400;700&display=swap"
@@ -294,7 +294,7 @@
             </p>
             <!-- Botão do card -->
             <div class="botao1">
-                <button class="botao-laranja">Assistir agora<img src="{%static 'img/vector/vector-puple.svg' %}" alt="seta"
+                <button class="botao-laranja">Assistir agora<img src="{% static 'img/vector/vector-puple.svg' %}" alt="seta"
                         id="vector1"></button>
             </div>
         </div>
@@ -412,7 +412,7 @@
             </p>
         </div>
     </div>
-    <script src="../script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>

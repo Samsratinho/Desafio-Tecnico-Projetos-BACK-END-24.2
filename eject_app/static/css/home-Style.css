@@ -33,6 +33,7 @@ body {
     position: absolute;
     margin-top: 10vh;
     justify-content: center;
+    z-index: 9;
 }
 
 .introducao {

@@ -3,7 +3,7 @@
     width: 172px;
     height: 52px;
     background-color: #704EEA;
-    color: white;
+    color: #FFFDF2;
     border: none;
     border-radius: 50px;
     font-family: 'DM Sans', sans-serif;
@@ -19,11 +19,15 @@
     gap: 15px;
     white-space: nowrap;
     margin-top: 60px;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .botao-roxo:hover {
     background-color: #593BBF; 
+    color:#FFFDF2;
+    transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
 }
+
 
 
 
@@ -39,9 +43,9 @@
     width: 233px; 
     height: 55px; 
     background-color: #FFD25B; 
-    color: #704EEA; 
+    color: #6F24E9; 
     border-radius: 50px;
-    border: 1px solid #704EEA;
+    border: 1px solid #6F24E9;
     padding: 10px 30px 10px 30px;
     gap: 15px;
     font-family: 'DM Sans', sans-serif;
@@ -59,7 +63,8 @@
 }
 
 .botao-laranja:hover {
-    background-color: #593BBF;
+    background-color: #6F24E9;
+    color:#FFFDF2;
     transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
 }
 
@@ -84,10 +89,12 @@
     white-space: nowrap;
     margin: 60px auto 0 auto; 
     z-index: 2;
-    transition: background-color 0.3s ease, transform 0.3s ease; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botao-rosa:hover {
-    background-color: #FFFDF2;
+    background-color: #FFFDF2 ;
+    color:#E924AE;
+    border: 1px solid #E924AE;
     transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
 }

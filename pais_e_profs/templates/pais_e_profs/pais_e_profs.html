@@ -96,7 +96,7 @@
                     <rect width="60" height="8" fill="#E924AE"/>
                 </svg>
                 <div class="cartoes">
-                    {% for material in categoria.material_set.all %}
+                    {% for material in categoria.material_set.all|slice:"3" %}
                         <div>
                             <button>
                                 <!-- Cartões -->

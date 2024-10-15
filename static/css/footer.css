@@ -4,7 +4,7 @@
     height: 80vh;
     width: 100%;
     margin-top: 200px;
-    background-image: url('../img/footer.svg');
+    background-image: url('/static/img/footer.svg');
     background-position: center;
     background-position-y: 0vh;
     background-size: cover;
@@ -28,7 +28,7 @@
 }
 
 .direitos p{
-        font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 300px;
     font-weight: 400;
     font-size: 2vh;
@@ -106,4 +106,3 @@
     border-style: none;
     cursor: pointer;
 }
-

@@ -1,51 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
-    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+
+{% block styles %}
     <link href="{% static 'forum/css/forum_cards.css' %}" rel="stylesheet">
     <link href="{% static 'forum/css/forum_imagenslaterais.css' %}" rel="stylesheet">
     <link href="{% static 'forum/css/forum_novotopico.css' %}" rel="stylesheet">
     <link href="{% static 'forum/css/forum_styles.css' %}" rel="stylesheet">
-    <!--Scripts-->
-    <script src="{% static 'js/navbar.js' %}" defer></script>
+{% endblock styles %}
 
-    <!--Google fonts import-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--Montserrat font-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!--DM Serif Display-->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <!--DM Sans-->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-
-    <title>PS 2024.2 EJECT</title>
-</head>
-<body>
-    <!--Barra de navegação-->
-    <div class="navbar">
-        <div class="logo">
-            <img src="{% static 'img/logo.svg' %}">
-        </div>
-        <div class="nav-parent">
-            <div class="box">
-                <ul class="nav-links">
-                    <a href="home.html"><li>home</li></a>
-                    <a href="videos.html"><li>vídeos</li></a>
-                    <a href="{% url 'forum:forum' %}"><li>fórum</li></a>
-                    <a href="pais_e_profs.html"><li>pais & profs</li></a>
-                </ul>
-            </div>
-            <div class="selector">
-                <img src="{% static 'img/selector.svg' %}" alt="seletor">
-            </div>
-        </div>
-    </div>
-
+{% block content %}
     <div id="container">
         <!-- Título principal e botão de ver mais -->
         <div>
@@ -78,11 +41,16 @@
         <section id="novotopico">
             <!-- Caixa para adicionar novo tópico -->
             <div id="card_add">
-                <textarea id="caixadetexto" placeholder="Adicionar um novo tópico"></textarea>
+                <form action="{% url 'forum:salvar_comentario' %}" method="post" id="form-comentario">
+                    {% csrf_token %}
+                    <input type="text" name="titulo" id="titulo" placeholder="Título" class="forum-comentario-titulo">
+                    <textarea id="caixadetexto" name="caixadetexto" placeholder="Adicionar um novo tópico"></textarea>
+                </form>
                 <div style="text-align: right; padding-right: 40px;">
-                <button id="btn_plus">
-                    <img src="{% static 'forum/img/btn_forum/plus.svg' %}">
-                </button></div>
+                    <button id="btn_plus" form="form-comentario">
+                        <img src="{% static 'forum/img/btn_forum/plus.svg' %}">
+                    </button>
+                </div>
             </div>
 
             {% for comentario in comentarios %}
@@ -132,87 +100,23 @@
             {% endfor %}
 
         <div id="topicospopulares">
-        <h2>Tópicos <span id="span_populares">populares</span></h2>
-        <div class="container_flex">
-            <div class="card_flex">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="txt_topicos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis magna aliquet condimentumt.</p>
-                <div class="txt_icon" >
-                    <img src="{% static 'forum/img/btn_forum/comentario.svg' %}">
-                    <p class="qnt_pessoas">25 pessoas estão discutindo esse tópico</p>
+            <h2>Tópicos <span id="span_populares">populares</span></h2>
+            <div class="container_flex">
+                {% for comentario in comentarios|slice:":3" %}
+                    <div class="card_flex">
+                        <h3>{{ comentario.titulo }}</h3>
+                        <p class="txt_topicos">{{ comentario.conteudo|truncatewords:10 }}</p>
+                        <div class="txt_icon" >
+                            <img src="{% static 'forum/img/btn_forum/comentario.svg' %}">
+                            <p class="qnt_pessoas">25 pessoas estão discutindo esse tópico</p>
+                        </div>
+                        <div class="txt_icon">
+                            <img src="{% static 'forum/img/btn_forum/relogio.svg' %}" class="icon_tempo">
+                            <p class="tempo">{{ comentario.data_criacao|timesince }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-            <div class="txt_icon">
-                    <img src="{% static 'forum/img/btn_forum/relogio.svg' %}" class="icon_tempo">
-                    <p class="tempo">Criado à 3 meses</p>
-            </div>
-            </div>
-            <div class="card_flex">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="txt_topicos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis magna aliquet condimentumt.</p>
-                <div class="txt_icon">
-                    <img src="{% static 'forum/img/btn_forum/comentario.svg' %}">
-                    <p class="qnt_pessoas">25 pessoas estão discutindo esse tópico</p>
-            </div>
-            <div class="txt_icon">
-                    <img src="{% static 'forum/img/btn_forum/relogio.svg' %}" class="icon_tempo">
-                    <p class="tempo">Criado à 3 meses</p>
-            </div>
-            </div>
-            <div class="card_flex">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <p class="txt_topicos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis magna aliquet condimentumt.</p>
-            <div class="txt_icon">
-                    <img src="{% static 'forum/img/btn_forum/comentario.svg' %}">
-                    <p class="qnt_pessoas">25 pessoas estão discutindo esse tópico</p>
-            </div>
-            <div class="txt_icon">
-                    <img src="{% static 'forum/img/btn_forum/relogio.svg' %}" class="icon_tempo">
-                    <p class="tempo">Criado à 3 meses</p>
-            </div>
-            </div>
-        </div>
         </div>
     </div>
-
-    <div class="footer">
-        <img src="{% static 'img/logo.svg' %}" alt="logo" class="logo">
-        <div class="direitos">
-            <p>
-                EJECT © Alguns Direitos Reservados
-            </p>
-        </div>
-        <div class="contato">
-            <h2>CONTATO</h2>
-
-            <p>
-                +55 21 99999-9999
-                contato@sabidinhos.com
-            </p>
-            <p>
-                Rua ali perto, 2000 - Candelária <br>
-                Rio Grande do Norte - RN
-            </p>
-            <div class="redes-sociais">
-                <button>
-                    <img src="{% static 'img/redes-sociais/instagram.svg' %}" alt="instagram">
-                </button>
-                <button>
-                    <img src="{% static 'img/redes-sociais/facebook.svg' %}" alt="facebook">
-                </button>
-                <button>
-                    <img src="{% static 'img/redes-sociais/youtube.svg' %}" alt="youtube">
-                </button>
-            </div>
-        </div>
-        <div class="informacoes">
-            <h2 >INFORMAÇÕES</h2>
-            <p>
-            <button>Exames Laboratoriais</button> <br>
-            <button>Consultas Veterinarias</button> <br>
-            <button>Plano PET de sáude</button> <br>
-            <button>Quem somos?</button>
-            </p>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock content %}

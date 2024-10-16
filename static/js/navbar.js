@@ -1,4 +1,3 @@
-
 /* Listener para mover o seletor para a página ativa
  * toda vez que a página mudar */
 window.addEventListener('DOMContentLoaded', (event) => {

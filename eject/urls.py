@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from eject_app.views import ahome
+from home.views import ahome
 
 urlpatterns = [
     path('admin/', admin.site.urls),

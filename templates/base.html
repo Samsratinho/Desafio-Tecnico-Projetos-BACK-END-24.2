@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="{% static '/css/home-button.css' %}"> 
     <link rel="stylesheet" href="{% static '/css/home-carousel.css' %}"> 
     <link rel="stylesheet" href="{% static '/css/home-cards.css' %}">
-    <link rel="stylesheet" href="{% static '/css/footer.css '%}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    {% block styles %}{% endblock styles %}
     <!--Scripts-->
-    <script src="{% static 'static/js/navbar.js' %}" defer></script>
+    <script src="{% static 'js/navbar.js' %}" defer></script>
     <link rel="preconnect" href="https:/fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=DM+Serif+Display&family=DM+Sans:wght@400;700&display=swap"
@@ -91,6 +92,6 @@
         </p>
     </div>
 </div>
-<script src="{% static 'static/js/script.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

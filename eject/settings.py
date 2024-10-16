@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'pais_e_profs.apps.PaisEProfsConfig',
     "home.apps.HomeAppConfig",
+    "videos.apps.VideosConfig",
 ]
 
 MIDDLEWARE = [

@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="card_ferramentas",
             name="imagem",
-            field=models.ImageField(upload_to="static\img\03card-home"),
+            field=models.ImageField(upload_to="material/"),
         ),
     ]

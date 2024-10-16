@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                     "categoria",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="eject_app.categoria",
+                        to="home.categoria",
                     ),
                 ),
             ],

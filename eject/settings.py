@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "eject_app.apps.EjectAppConfig",
+    "home.apps.HomeAppConfig",
 ]
 
 MIDDLEWARE = [

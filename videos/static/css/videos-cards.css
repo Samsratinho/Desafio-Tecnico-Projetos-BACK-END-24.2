@@ -32,7 +32,7 @@
     font-family: 'DM Sans', sans-serif;
     margin-left: 14px;
 }
-
+/*
 #video1 {
     background-color: #D9D9D9;
     background-image: url('../img/banner/bluey.png');
@@ -139,7 +139,7 @@
     background-size: cover;
     overflow: hidden;
     filter: blur(0.7px);
-}
+}*/
 
 #play {
     position: relative;

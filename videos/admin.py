@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import CategoriaVideo, Material
+from .models import CategoriaVideos, Material
 
 
-admin.site.register(CategoriaVideo)
+
+admin.site.register(CategoriaVideos)
 admin.site.register(Material)

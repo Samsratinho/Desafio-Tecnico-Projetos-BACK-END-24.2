@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'pais_e_profs.apps.PaisEProfsConfig',
     "home.apps.HomeAppConfig",
+    'forum.apps.ForumConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Additional locations of static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]

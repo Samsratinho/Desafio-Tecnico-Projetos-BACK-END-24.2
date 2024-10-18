@@ -9,6 +9,7 @@ urlpatterns = [
     path('pais_e_profs/', include('pais_e_profs.urls')),
     path("", ahome),
     path('videos/', include('videos.urls')),
+    path('forum/', include('forum.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

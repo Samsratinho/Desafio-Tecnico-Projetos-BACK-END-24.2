@@ -8,9 +8,9 @@
     <meta name="description" content="Descrição do site para SEO.">
     <title>Home PS 24.2</title>
     <link rel="stylesheet" href= "{% static '/css/navbar.css' %}">
-    <link rel="stylesheet" href="{% static '/css/footer.css '%}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
     <!--Scripts-->
-    <script src="{% static 'static/js/navbar.js' %}" defer></script>
+    <script src="{% static 'js/navbar.js' %}" defer></script>
     <link rel="preconnect" href="https:/fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=DM+Serif+Display&family=DM+Sans:wght@400;700&display=swap"
@@ -31,10 +31,10 @@
         <div class="nav-parent">
             <div class="box">
                 <ul class="nav-links">
-                    <a href=""><li>home</li></a>
-                    <a href="{% url "videos:videos" %}"><li>vídeos</li></a>
-                    <a href="forum.html"><li>fórum</li></a>
-                    <a href="{% url "pais_e_profs:pais_e_profs" %}"><li>pais & profs</li></a>
+                    <a href="/"><li>home</li></a>
+                    <a href="{% url 'videos:videos' %}"><li>vídeos</li></a>
+                    <a href="{% url 'pais_e_profs:pais_e_profs' %}"><li>pais & profs</li></a>
+                    <a href="{% url 'forum:forum' %}"><li>fórum</li></a>
                 </ul>
             </div>
             <div class="selector">
@@ -86,6 +86,6 @@
         </p>
     </div>
 </div>
-<script src="{% static 'static/js/script.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

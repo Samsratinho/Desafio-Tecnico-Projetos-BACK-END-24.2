@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block styles%}
+<link rel="stylesheet" href= "{% static 'videos/css/videos-banner.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-cards.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-components.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-shapes.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-styles.css' %}">
+{% endblock styles%}
+        <!--Decoração e introdução da página-->
+        <div class="decoracao1">
+            <div>
+                <!--Cross 1-->
+                <img src="{% static '/img/cross1.svg' %}" alt="cruz" id="cross1">
+    
+                <!--Circle 1-->
+                <img src="{% static '/img/circle1.svg' %}" alt="circulo" id="circle1">
+                
+                <!--Star 1-->
+                <img src="{% static '/img/star1.svg' %}" alt="estrela" id="star1">
+                    
+                <!--Star 2-->
+                <img src="{% static '/img/star2.svg' %}" alt="estrela" id="star2">
+    
+                <!--Circle 2-->
+                <img src="{% static '/img/circle2.svg' %}" alt="circulo" id="circle2">
+            </div>
+
+            <div class="titulo1">
+                <div>
+                    <h1>Mais
+                        <span class="destaque1">conhecimento,</span>
+                        <span class="destaque1" style="color: #704EEA">diversão</span>
+                        <span class="destaque1" style="color: #000000">&</span>
+                        <p>
+                            <span class="destaque1" style="color:#E924AE">segurança</span>
+                            para crianças
+                        </p>
+                    </h1>
+                </div>
+
+                <div class="banner">
+                    <div class="card1">
+                        <img src="{% static '/img/banner/universoz.png' %}" alt="Universo Z" id="image1">
+                    </div>
+                    <div class="grupo1">
+                        <div class="card2">
+                            <img src="{% static '/img/banner/whatsthebigidea.png' %}" alt="What's The Big Idea?" id="image2">
+                        </div>
+                        <div class="card3">
+                            <img src="{% static '/img/banner/bebelaba.png' %}" alt="Bebel-á-bá" id="image3">
+                        </div>
+                    </div>
+                    <div class="card4">
+                        <img src="{% static '/img/banner/bluey.png' %}" alt="Bluey" id="image4">
+                    </div>
+                    <div class="grupo2">
+                        <div class="card5">
+                            <img src="{% static '/img/banner/mytikah.png' %}" alt="Mytikah" id="image5">
+                        </div>
+                        <div class="card6">
+                            <img src="{% static '/img/banner/turmamonica.png' %}" alt="Turma da Mônica" id="image6">
+                        </div>
+                    </div>
+                    <div class="card7">
+                        <img src="{% static '/img/banner/uauanimal.png' %}" alt="Uau Animal" id="image7">
+                    </div>
+                </div>
+                <div class="descricao1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus at mauris quis magna aliquet
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Componentes-->
+        <div class="linha">
+            
+            <div class="componente1">
+                <img src="{% static 'img/icons/capelo.svg' %}" alt="capelo">
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>
+            
+            <!--Componente 2-->
+            <div class="componente2">
+                <img src="{% static 'img/icons/lápis.svg' %}" alt="lápis">
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>
+            <!--Componente 3-->
+            <div class="componente3">
+                <img src="{% static 'img/icons/lua.svg' %}" alt="lua">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>
+            <!--Componente 4-->
+            <div class="componente4">
+                <img src="{% static 'img/icons/escola.svg' %}" alt="escola">
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>  
+        </div>   
+    
+        <!--Divisão dos cartões 1 - Vídeos educativos-->
+        {% for categoria in categorias %}
+        <div class="cartoes-parente">
+            <h2>
+                {{categoria.nome}}
+            </h2>
+            <!--Mini barra-->
+            <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="8" fill="#F19436"/>
+            </svg>
+            <!--Cartões em sí-->
+            <div class="cartoes1">
+                {% for material in categoria.material_set.all|slice:"3" %}
+                <div>
+                    <button>
+                        <div class="cardImage" 
+                            style=" 
+                            background-color: #D9D9D9;
+                            background-image: url({{material.imagem.url}});
+                            background-position: center;
+                            background-size: cover;
+                            overflow: hidden;
+                            filter: blur(0.7px);
+                            width: 360px;
+                            height: 220px;
+                            border-radius: 35px;
+                            background-color: #FDEBD3;"
+                        >
+                            <img src="{% static '/img/play.svg'%}" id="play">
+                        </div>
+                        <br>
+                        <h3>{{material.titulo}}</h3>
+                    </button>
+                </div>
+                {% endfor %}
+            </div> 
+        </div>
+        {% endfor %}   
+
+         
+        <br><br>
+        <br><br> 
+        {% endblock content %}

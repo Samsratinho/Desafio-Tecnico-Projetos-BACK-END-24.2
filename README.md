@@ -55,3 +55,6 @@ Para executar o projeto certifique-se que você tem uma versão recente do Pytho
    python manage.py runserver
    ```
 6. Acesse o endereço `http://127.0.0.1:8000/` no seu navegador.
+
+## Diagrama de Classes do projeto SABIDINHOS:
+![Diagrama de Classes](image-readme/classe_uml.png)

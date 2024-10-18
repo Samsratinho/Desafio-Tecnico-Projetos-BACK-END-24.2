@@ -1,49 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
-        <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-        <link href="{% static 'pais_e_profs/css/styles.css' %}" rel="stylesheet">
-        <link href="{% static 'pais_e_profs/css/shapes.css' %}" rel="stylesheet">
-        <link href="{% static 'pais_e_profs/css/cards.css' %}" rel="stylesheet">
-        <!--Scripts-->
-        <script src="{% static 'js/navbar.js' %}" defer></script>
-        <!--Google fonts import-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!--Montserrat font-->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <!--DM Serif Display-->
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-        <!--DM Sans-->
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-        <title>PS 2024.2 EJECT</title>
-    </head>
+{% block content %}
+{% block styles%}
 
-    <body>
+<link href="{% static 'pais_e_profs/css/styles.css' %}" rel="stylesheet">
+<link href="{% static 'pais_e_profs/css/shapes.css' %}" rel="stylesheet">
+<link href="{% static 'pais_e_profs/css/cards.css' %}" rel="stylesheet">
 
-        <!--Barra de navegação-->
-        <div class="navbar">
-            <div class="logo">
-                <img src="{% static 'img/logo.svg' %}">                
-            </div>
-            <div class="nav-parent">
-                <div class="box">
-                    <ul class="nav-links">
-                        <a href="home.html"><li>home</li></a>
-                        <a href="videos.html"><li>vídeos</li></a>
-                        <a href="forum.html"><li>fórum</li></a>
-                        <a href="{% url 'pais_e_profs:pais_e_profs' %}"><li>pais & profs</li></a>
-                    </ul>
-                </div>
-                <div class="selector">
-                    <img src="{% static 'img/selector.svg' %}" alt="seletor">                   
-                </div>
-            </div>
-        </div>
+{% endblock styles%}
 
         <!--Decoração e introdução da página-->
         <div class="decoracao">
@@ -113,47 +77,5 @@
             <br><br>
             <br><br>
         {% endfor %}
-
-        <div class="footer">
-            <img src="{% static 'img/logo.svg' %}" alt="logo" class="logo">
-            <div class="direitos">
-                <p>
-                    EJECT © Alguns Direitos Reservados
-                </p>
-            </div>
-             <div class="contato">
-                <h2>CONTATO</h2>
-
-                <p>
-                    +55 21 99999-9999
-                    contato@sabidinhos.com
-                </p>    
-                <p>
-                    Rua ali perto, 2000 - Candelária <br>
-                    Rio Grande do Norte - RN
-                </p>
-                <div class="redes-sociais">
-                    <button>
-                        <img src="{% static 'img/redes-sociais/instagram.svg' %}" alt="instagram">
-                    </button>
-                    <button>
-                        <img src="{% static 'img/redes-sociais/facebook.svg' %}" alt="facebook">
-                    </button>
-                    <button>
-                        <img src="{% static 'img/redes-sociais/youtube.svg' %}" alt="youtube">
-                    </button>
-                </div>
-            </div>
-
-            <div class="informacoes">
-                <h2 >INFORMAÇÕES</h2>
-                <p>
-                <button>Exames Laboratoriais</button> <br>
-                <button>Consultas Veterinarias</button> <br>
-                <button>Plano PET de sáude</button> <br>
-                <button>Quem somos?</button>
-                </p>
-            </div>
-        </div>
-    </body>
-</html>
+        
+{% endblock content%}

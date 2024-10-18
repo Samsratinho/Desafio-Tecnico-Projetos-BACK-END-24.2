@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% block styles%}
+<link rel="stylesheet" href= "{% static 'videos/css/videos-banner.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-cards.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-components.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-shapes.css' %}">
+<link rel="stylesheet" href= "{% static 'videos/css/videos-styles.css' %}">
+{% endblock styles%}
         <!--Decoração e introdução da página-->
         <div class="decoracao1">
             <div>
@@ -70,22 +77,38 @@
         </div>
 
         <!--Componentes-->
-        {% for categoria in categorias %}
         <div class="linha">
-            <!--Componente 1-->
+            
             <div class="componente1">
-                {% if categoria.imagem %}
-                <img src="{{categoria.imagem.url}}" alt="capelo">
-                {% else %}
-                <p>sem foto</p>
-                {% endif %}
+                <img src="{% static 'img/icons/capelo.svg' %}" alt="capelo">
                  <p>
-                    {{categoria.descricao}}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
                  </p>
             </div>
-        </div>
-        {% endfor %}
-
+            
+            <!--Componente 2-->
+            <div class="componente2">
+                <img src="{% static 'img/icons/lápis.svg' %}" alt="lápis">
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>
+            <!--Componente 3-->
+            <div class="componente3">
+                <img src="{% static 'img/icons/lua.svg' %}" alt="lua">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>
+            <!--Componente 4-->
+            <div class="componente4">
+                <img src="{% static 'img/icons/escola.svg' %}" alt="escola">
+                 <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at mauris quis.
+                 </p>
+            </div>  
+        </div>   
+    
         <!--Divisão dos cartões 1 - Vídeos educativos-->
         {% for categoria in categorias %}
         <div class="cartoes-parente">

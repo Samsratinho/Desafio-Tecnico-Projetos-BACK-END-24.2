@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pais_e_profs/', include('pais_e_profs.urls')),
     path("", ahome),
+    path('videos/', include('videos.urls')),
     path('forum/', include('forum.urls')),
 ]
 

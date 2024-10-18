@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                     models.CharField(default="Título secundário", max_length=100),
                 ),
                 ("descricao", models.TextField()),
-                ("imagem", models.ImageField(upload_to="static/")),
+                ("imagem", models.ImageField(upload_to="material/")),
                 (
                     "categoria",
                     models.ForeignKey(

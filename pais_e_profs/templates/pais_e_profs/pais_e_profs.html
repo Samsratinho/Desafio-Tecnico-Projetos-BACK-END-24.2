@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link href="{% static 'pais_e_profs/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'pais_e_profs/css/shapes.css' %}" rel="stylesheet">
+    <link href="{% static 'pais_e_profs/css/cards.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+{% block content %}
+<!--Decoração e introdução da página-->
+    <div class="decoracao">
+        <div>
+            <!--Cross 1-->
+            <img src="{% static 'pais_e_profs/img/cross1.svg' %}" alt="cruz" id="cross1">
+
+            <!--Circle 1-->
+            <img src="{% static 'pais_e_profs/img/circle1.svg' %}" alt="circulo" id="circle1">
+            
+            <!--Star 1-->
+            <img src="{% static 'pais_e_profs/img/star1.svg' %}" alt="estrela" id="star1">
+
+            <!--Star 2-->
+            <img src="{% static 'pais_e_profs/img/star2.svg' %}" alt="estrela" id="star2">
+
+            <!--Circle 2-->
+            <img src="{% static 'pais_e_profs/img/circle2.svg' %}" alt="circulo" id="circle2">
+        </div>
+        <div class="titulo">
+            <div>
+                <h1>Juntos no aprendizado: 
+                    <span class="destaque">recursos</span>
+                    para
+                    <span class="destaque" style="color:#704EEA">fortalecimento</span>
+                    da educação
+                </h1>
+            </div>
+            <div class="descricao">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus at mauris quis magna aliquet condimentum.
+                    Cras et turpis id eros tincidunt faucibus.
+                    Nullam aliquam malesuada neque, ac hendrerit lacus tincidunt eu.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus at mauris quis magna aliquet condimentum.
+                    Cras et turpis id eros tincidunt faucibus.
+                    Nullam aliquam malesuada neque, ac hendrerit lacus tincidunt eu.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% for categoria in categorias %}
+        <!-- Div dos cartões -->
+        <div class="cartoes-parent">
+            <h2>{{ categoria.nome }}</h2>
+            <!-- Mini barra -->
+            <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="8" fill="#E924AE"/>
+            </svg>
+            <div class="cartoes">
+                {% for material in categoria.material_set.all|slice:"3" %}
+                    <div>
+                        <button>
+                            <!-- Cartões -->
+                            <div
+                                class="retangle card-image"
+                                style="background-image: url({{ material.imagem.url }});"></div>
+                            <br>
+                            <h3>{{ material.titulo }}</h3>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+    {% endfor %}
+{% endblock content %}
